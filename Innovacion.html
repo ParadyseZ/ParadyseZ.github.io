@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html>
+   <head>
+	      <title>Inicio </title>
+        <style type="text/css">
+* {
+    padding:0px;
+    margin: 0px;
+}
+body {
+  background-image: url("fondo 44.jpg");
+  border: rgb(92, 82, 82) 2px solid;
+  margin: 25px;
+}
+
+.title {
+	width: 100%;
+	background: hsl(0, 0%, 0%);
+  color: rgb(155, 179, 25);
+	height: 200px;
+  	display: flex;
+	align-items: center;
+	justify-content: center;
+
+}
+
+.title h1{
+	color: #ffffff;
+	font-size: 34px;
+	font-weight: 200;
+	text-align: center;
+}
+
+#header {
+    margin: auto;
+    width: 1300px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+.nav {
+	width: 1300px;
+	display: flex;
+	flex-wrap: wrap;
+	height: 40px;
+}
+
+.nav li{
+	flex-basis: 0;
+	flex-grow: 0;
+	border-right: 80px solid #1ef50b;
+	position: relative;
+}
+
+.nav .first-item{
+	border-left: 1px solid #e6ff03;
+}
+
+.nav li a{
+	display: flex;
+	flex-direction: column;
+	font-size: 20px;
+}
+
+.nav .imagen{
+	position: absolute;
+	bottom: 0;
+	right: 10px;
+	width: 0%;
+	z-index: 20;
+
+	-webkit-transition: all 300ms cubic-bezier(0.445, 0.050, 0.550, 0.950); 
+   -moz-transition: all 300ms cubic-bezier(0.445, 0.050, 0.550, 0.950); 
+     -o-transition: all 300ms cubic-bezier(0.445, 0.050, 0.550, 0.950); 
+        transition: all 300ms cubic-bezier(0.445, 0.050, 0.550, 0.950); /* easeInOutSine */
+
+-webkit-transition-timing-function: cubic-bezier(0.445, 0.050, 0.550, 0.950); 
+   -moz-transition-timing-function: cubic-bezier(0.445, 0.050, 0.550, 0.950); 
+     -o-transition-timing-function: cubic-bezier(0.445, 0.050, 0.550, 0.950); 
+        transition-timing-function: cubic-bezier(0.445, 0.050, 0.550, 0.950); /* easeInOutSine */
+
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.51);
+-moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.51);
+box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.51);
+}
+
+.nav li a .text-item{
+	width: 100%;
+	height: 150%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	color: #eeff00;
+	top: 0%;
+	position: absolute;
+	z-index: 10;
+
+	-webkit-transition: all 500ms cubic-bezier(0.175, 0.885, 0.320, 1); /* older webkit */
+-webkit-transition: all 500ms cubic-bezier(0.175, 0.885, 0.320, 1.275); 
+   -moz-transition: all 500ms cubic-bezier(0.175, 0.885, 0.320, 1.275); 
+     -o-transition: all 500ms cubic-bezier(0.175, 0.885, 0.320, 1.275); 
+        transition: all 500ms cubic-bezier(0.175, 0.885, 0.320, 1.275); /* easeOutBack */
+
+-webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1); /* older webkit */
+-webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275); 
+   -moz-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275); 
+     -o-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275); 
+        transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275); /* easeOutBack */
+}
+
+.nav li a .down-item{
+	position: absolute;
+	top: 0%;
+	width: 100%;
+	height: 150%;
+	background: #524b4b;
+
+	-webkit-transition: all 200ms cubic-bezier(0.215, 0.610, 0.355, 1.000); 
+   -moz-transition: all 200ms cubic-bezier(0.215, 0.610, 0.355, 1.000); 
+     -o-transition: all 200ms cubic-bezier(0.215, 0.610, 0.355, 1.000); 
+        transition: all 200ms cubic-bezier(0.215, 0.610, 0.355, 1.000); /* easeOutCubic */
+
+-webkit-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000); 
+   -moz-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000); 
+     -o-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000); 
+        transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000); /* easeOutCubic */
+}
+
+.nav li:hover .down-item, .menu li:hover .text-item{
+	top: 100%;
+	height: 115%;
+}
+
+.nav li:hover .imagen{
+	width: 100%;
+	right: 0px;
+}
+.nav li a {
+background-color: rgb(0, 0, 0);
+color: rgb(226, 226, 226);
+text-decoration: underline;
+padding: 10px 85px;
+display: block;
+}
+
+.nav > li a:hover {
+     background-color: #fa0000;
+    }
+
+.nav > li {
+float: left;
+}
+
+.nav li ul {
+  display: none;
+  position: absolute;
+  position: absolute;
+  max-width: 300px; 
+}
+
+.nav li:hover > ul {
+  display: block;
+}
+
+.contenedor{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50vh;
+    }
+    .contenedor figure{
+       position:relative;
+        height: 450px;
+        cursor: pointer;
+        width: 1250px;
+        overflow: hidden;
+        border-radius: 6px;
+        box-shadow: 0px 15px 25px rgba(0,0,0,0.50);
+    }
+    .contenedor figure img{
+        width: 100%;
+        height: 100%;
+        transition: all 400ms ease-out;
+        will-change: transform;
+    }
+    .contenedor figure .capa{
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(249, 253, 0, 0.671);
+        transition: all 400ms ease-out;
+        opacity: 0;
+        visibility: hidden;
+       text-align: center;
+    }
+    .contenedor figure:hover > .capa {
+        opacity: 1;
+        visibility: visible;
+    }
+    .contenedor figure:hover > .capa h3{
+        margin-top: 70px;
+        margin-bottom: 15px;
+    }
+    .contenedor figure:hover > img{
+      -webkit-transform: scale(1.8);
+    }
+    .contenedor figure .capa h3{
+        color: #ffffff;
+        font-weight: 400;
+        margin-bottom: 120px;
+        transition: all 400ms ease-out;
+         margin-top: 30px;
+    }
+    .contenedor figure .capa p{
+        color: #000000;
+        font-size: 50px;
+        line-height: 1.5;
+        width: 800%;
+        max-width: 520px;
+        margin: auto;
+    }
+
+    table {
+      font-size: 20px;
+      text-align: justify;
+background-color:#503d3d;
+color:#ffffff;
+}
+
+p.box1 {
+width:950px;
+margin:10px 50px;
+padding:20px;
+font-size:italic;
+background-color:rgb(41, 99, 41);
+color:#000;
+}
+
+.table2 {
+   justify-content: center;
+background-color:#503d3d;
+color:hsl(0, 0%, 100%);
+}
+
+p.box1 {
+width:150px;
+margin:10px 50px;
+padding:20px;
+font-size:italic;
+background-color:rgb(83, 99, 41);
+color:#000;
+}
+
+    </style>
+</head>
+<body>
+
+ <section class="title">
+   <h1>Paradyse Resert Zero</h1>
+   </section>
+
+   <nav class="navegacion">
+     <ul class="menu">
+      <!DOCTYPE html>
+      <html lang="es">
+      <head>
+          <meta charset="UTF-8">
+          <title>Efecto Hover a Una Imagen</title>
+          <link rel="stylesheet" href="estilos.css">
+      </head>
+      <style>
+        
+      </style>
+      <body>
+                    
+<div id="header">
+<ul class="nav">
+<li>
+ <a href="Inicio.html">
+ <img src="fresa.jpg" alt="" class="imagen">
+ <span class="text-item">Inicio</span>
+ <span class="down-item"></span>
+ </a>
+</li>
+
+<li>
+ <a href="Antecedentes.html">
+  <img src="paleta4.jpeg" alt="" class="imagen">
+  <span class="text-item">Producto especial</span>
+ <span class="down-item"></span>
+ </a>
+</li>
+
+<li>
+ <a href="Clasificacion codex.html">
+ <img src="Logo empresa.jpg" alt="" class="imagen">
+ <span class="text-item">Elaboración</span>
+ <span class="down-item"></span>
+ </a>
+</li>
+
+<li>
+  <a href="Produccion y consumo.html">
+    <img src="fondo 45.jpg" alt="" class="imagen">
+ <span class="text-item">Producción y Consumo</span>
+ <span class="down-item"></span>
+ </a>
+</li>
+
+<li>
+  <a href="Innovacion.html">
+  <img src="fondo 42.jpg" alt="" class="imagen">
+  <span class="text-item">Innovación</span>
+  <span class="down-item"></span>
+  </a>
+ </li>
+
+</ul>
+</nav>
+			<div class="secciones">
+			<article id="tab1">
+        <br>
+        <br>
+				<h1>Innovación</h1>
+				<p>la leche, además de ser un alimento delicioso, es nutricionalmente muy interesante ya que es fuente de proteínas y fuente de calcio,
+          necesario para el mantenimiento de los huesos y dientes en condiciones	normales. Tecnológica y sensorialmente, la leche le confiere al helado la estabilidad, la cremosidad y el sabor y olor característicos
+          <br>
+          <br>
+          la fresa Contienen antocianinas, las cuales son pigmentos que ayudan a reducir el colesterol y el riesgo de sufrir hipertensión. Son muy ricas en agua, vitaminas,
+          antioxidantes, potasio y calcio. Por lo tanto, tienen importantes propiedades hidratantes. Son ricas en vitaminas, especialmente la C. Por esta razón se pensó en elaborar un producto con todas las cualidades antes mencionadas, pero innovándola con un toque de licor mejora tanto el sabor como la
+          textura. El alcohol reduce el pu to de congelación, por lo que los helados se mantienen más cremosos y suaves porque no se congelan t n sólidos y es menos probable que formen cristales de hielo.
+          </p>
+			</article>
+      <br>
+			<article id="tab2">
+				<h1>Aplicación del producto</h1>
+        <br>
+        <h1>Alimento</h1>
+				<p>Las paletas heladas de leche y fresa perfumadas con licor de calidad. Las paletas base leche mostraron de 6.83 a 12.7% de grasa y algunas muestras un contenido de proteína interesante (3.55 y 4.215). El perfil de ácidos grasos mostró un mayor contenido de ácidos grasos insaturados que de saturados y pequeñas cantidades de ácidos grasos trans (UAEH 2012).
+          La fresa es muy rica en vitamina C con potentes propiedades antioxidantes que nos ayudan a neutralizar los radicales libres producidos como consecuencia de la contaminación ambiental, edad, estrés, exposición solar, infecciones y otros procesos naturales 
+          </p>
+			</article>
+      <br>
+			<article id="tab3">
+				<h1>Salud</h1>
+				<p>Las paletas heladas con leche y fresa perfumadas con licor de calidad tiene diferentes beneficios para la salud que son :</p>
+				<p>
+          <br>
+          <ul>
+            <li>•	Son refrescantes.</li> 
+            <li>•	Ayudan a bajar de peso.</li> 
+            <li>•	Son bajas en calorías (en especial las de agua).</li> 
+            <li>•	Son nutritivas.</li> 
+            <li>•	Son saludables.</li> 
+        </ul>
+        </p>
+</body>
+<br>
+<br>
+<br>
+<p class="">©Copyright 2023 de Paradyse Resert Zero. Todos los derechos revertidos.</p>
+<main>
+              </main>
+               </body>
+</html>

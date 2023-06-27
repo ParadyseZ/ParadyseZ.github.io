@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html>
+   <head>
+	      <title>Producción y consumo </title>
+        <style type="text/css">
+* {
+    padding:0px;
+    margin: 0px;
+}
+body {
+  background-image: url("fondo 38.jpg");
+  border: rgb(92, 82, 82) 2px solid;
+  margin: 25px;
+}
+
+.title {
+	width: 100%;
+	background: hsl(0, 0%, 0%);
+  color: rgb(155, 179, 25);
+	height: 200px;
+  	display: flex;
+	align-items: center;
+	justify-content: center;
+
+}
+
+.title h1{
+	color: #ffffff;
+	font-size: 34px;
+	font-weight: 200;
+	text-align: center;
+}
+
+#header {
+    margin: auto;
+    width: 1300px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+.nav {
+	width: 1300px;
+	display: flex;
+	flex-wrap: wrap;
+	height: 40px;
+}
+
+.nav li{
+	flex-basis: 0;
+	flex-grow: 0;
+	border-right: 80px solid #1ef50b;
+	position: relative;
+}
+
+.nav .first-item{
+	border-left: 1px solid #e6ff03;
+}
+
+.nav li a{
+	display: flex;
+	flex-direction: column;
+	font-size: 20px;
+}
+
+.nav .imagen{
+	position: absolute;
+	bottom: 0;
+	right: 10px;
+	width: 0%;
+	z-index: 20;
+
+	-webkit-transition: all 300ms cubic-bezier(0.445, 0.050, 0.550, 0.950); 
+   -moz-transition: all 300ms cubic-bezier(0.445, 0.050, 0.550, 0.950); 
+     -o-transition: all 300ms cubic-bezier(0.445, 0.050, 0.550, 0.950); 
+        transition: all 300ms cubic-bezier(0.445, 0.050, 0.550, 0.950); /* easeInOutSine */
+
+-webkit-transition-timing-function: cubic-bezier(0.445, 0.050, 0.550, 0.950); 
+   -moz-transition-timing-function: cubic-bezier(0.445, 0.050, 0.550, 0.950); 
+     -o-transition-timing-function: cubic-bezier(0.445, 0.050, 0.550, 0.950); 
+        transition-timing-function: cubic-bezier(0.445, 0.050, 0.550, 0.950); /* easeInOutSine */
+
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.51);
+-moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.51);
+box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.51);
+}
+
+.nav li a .text-item{
+	width: 100%;
+	height: 150%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	color: #eeff00;
+	top: 0%;
+	position: absolute;
+	z-index: 10;
+
+	-webkit-transition: all 500ms cubic-bezier(0.175, 0.885, 0.320, 1); /* older webkit */
+-webkit-transition: all 500ms cubic-bezier(0.175, 0.885, 0.320, 1.275); 
+   -moz-transition: all 500ms cubic-bezier(0.175, 0.885, 0.320, 1.275); 
+     -o-transition: all 500ms cubic-bezier(0.175, 0.885, 0.320, 1.275); 
+        transition: all 500ms cubic-bezier(0.175, 0.885, 0.320, 1.275); /* easeOutBack */
+
+-webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1); /* older webkit */
+-webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275); 
+   -moz-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275); 
+     -o-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275); 
+        transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275); /* easeOutBack */
+}
+
+.nav li a .down-item{
+	position: absolute;
+	top: 0%;
+	width: 100%;
+	height: 150%;
+	background: #524b4b;
+
+	-webkit-transition: all 200ms cubic-bezier(0.215, 0.610, 0.355, 1.000); 
+   -moz-transition: all 200ms cubic-bezier(0.215, 0.610, 0.355, 1.000); 
+     -o-transition: all 200ms cubic-bezier(0.215, 0.610, 0.355, 1.000); 
+        transition: all 200ms cubic-bezier(0.215, 0.610, 0.355, 1.000); /* easeOutCubic */
+
+-webkit-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000); 
+   -moz-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000); 
+     -o-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000); 
+        transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000); /* easeOutCubic */
+}
+
+.nav li:hover .down-item, .menu li:hover .text-item{
+	top: 100%;
+	height: 115%;
+}
+
+.nav li:hover .imagen{
+	width: 100%;
+	right: 0px;
+}
+.nav li a {
+background-color: rgb(0, 0, 0);
+color: rgb(226, 226, 226);
+text-decoration: underline;
+padding: 10px 85px;
+display: block;
+}
+
+.nav > li a:hover {
+     background-color: #fa0000;
+    }
+
+.nav > li {
+float: left;
+}
+
+.nav li ul {
+  display: none;
+  position: absolute;
+  position: absolute;
+  max-width: 300px; 
+}
+
+.nav li:hover > ul {
+  display: block;
+}
+
+.contenedor{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50vh;
+    }
+    .contenedor figure{
+       position:relative;
+        height: 450px;
+        cursor: pointer;
+        width: 1250px;
+        overflow: hidden;
+        border-radius: 6px;
+        box-shadow: 0px 15px 25px rgba(0,0,0,0.50);
+    }
+    .contenedor figure img{
+        width: 100%;
+        height: 100%;
+        transition: all 400ms ease-out;
+        will-change: transform;
+    }
+    .contenedor figure .capa{
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(249, 253, 0, 0.671);
+        transition: all 400ms ease-out;
+        opacity: 0;
+        visibility: hidden;
+       text-align: center;
+    }
+    .contenedor figure:hover > .capa {
+        opacity: 1;
+        visibility: visible;
+    }
+    .contenedor figure:hover > .capa h3{
+        margin-top: 70px;
+        margin-bottom: 15px;
+    }
+    .contenedor figure:hover > img{
+      -webkit-transform: scale(1.8);
+    }
+    .contenedor figure .capa h3{
+        color: #ffffff;
+        font-weight: 400;
+        margin-bottom: 120px;
+        transition: all 400ms ease-out;
+         margin-top: 30px;
+    }
+    .contenedor figure .capa p{
+        color: #000000;
+        font-size: 50px;
+        line-height: 1.5;
+        width: 800%;
+        max-width: 520px;
+        margin: auto;
+    }
+
+    table {
+      font-size: 20px;
+      text-align: justify;
+background-color:#503d3d;
+color:#ffffff;
+}
+p.box1 {
+width:950px;
+margin:10px 50px;
+padding:20px;
+font-size:italic;
+background-color:rgb(41, 99, 41);
+color:#000;
+}
+
+.table2 {
+   justify-content: center;
+   background-image: url("paleta de fresa.jpg");
+color:hsl(0, 0%, 0%);
+}
+p.box1 {
+width:150px;
+margin:10px 50px;
+padding:20px;
+font-size:italic;
+background-color:rgb(83, 99, 41);
+color:#000;
+}
+
+    </style>
+</head>
+<body>
+
+ <section class="title">
+   <h1>Paradyse Resert Zero</h1>
+   </section>
+
+   <nav class="navegacion">
+     <ul class="menu">
+      <!DOCTYPE html>
+      <html lang="es">
+      <head>
+          <meta charset="UTF-8">
+          <title>Efecto Hover a Una Imagen</title>
+          <link rel="stylesheet" href="estilos.css">
+      </head>
+      <style>
+        
+      </style>
+      <body>
+                    
+<div id="header">
+<ul class="nav">
+<li>
+ <a href="Inicio.html">
+ <img src="fresa.jpg" alt="" class="imagen">
+ <span class="text-item">Inicio</span>
+ <span class="down-item"></span>
+ </a>
+</li>
+
+<li>
+ <a href="Antecedentes.html">
+  <img src="paleta4.jpeg" alt="" class="imagen">
+  <span class="text-item">Producto especial</span>
+ <span class="down-item"></span>
+ </a>
+</li>
+
+<li>
+ <a href="Clasificacion codex.html">
+ <img src="Logo empresa.jpg" alt="" class="imagen">
+ <span class="text-item">Elaboración</span>
+ <span class="down-item"></span>
+ </a>
+</li>
+
+<li>
+  <a href="Produccion y consumo.html">
+    <img src="fondo 45.jpg" alt="" class="imagen">
+ <span class="text-item">Producción y Consumo</span>
+ <span class="down-item"></span>
+ </a>
+</li>
+
+<li>
+  <a href="Innovacion.html">
+  <img src="fondo 42.jpg" alt="" class="imagen">
+  <span class="text-item">Innovación</span>
+  <span class="down-item"></span>
+  </a>
+ </li>
+
+</ul>
+</nav>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="contenedor" align="center">
+  <a href="#">
+       <figure>
+           <img src="Logo empresa.jpg">
+           <div class="capa">
+            <br>
+<br>
+<br>
+            <p>BIENVENIDOS!!</p>
+        </div>
+                             </figure>
+   </a>
+</div>
+		            <br>
+                <br>
+<br>
+<br>
+<center>
+<table>
+  <tr>
+  <td> 
+    <div align="right">
+    <img src="paleta 3.jpeg" width="300"
+         height="241" >
+        </div> >
+      </td>
+                       <td> 
+                <div align="right">
+                <img src="saludo.gif" width="300"
+                     height="241" >
+                    </div> >
+                  </td>
+
+                  <td> 
+                    <div align="right">
+                    <img src="paleta4.jpeg" width="300"
+                         height="241" >
+                        </div> >
+                      </td>                                    
+       </tr>
+                         </table>
+                        </center>
+<center>
+                                <h1 style="text‐align: center;"><br></h1>
+                <table class="table" style="background‐color: rgb(106, 161, 109); width: 60%; text‐align: left; margin‐left: auto; margin‐right: auto;"
+                border="9" cellpadding="15" cellspacing="9">
+                  <tbody>   <tr>   <td style="background-color: #000000;">
+                  <center>
+                    <h4>Tipo de empresa</h4>
+                  </center>
+                    <br>
+                    <br>
+                  
+                      En Paradyse Resert Zero nos dedicamos al negocio de las Paletas de Fresa con Toque de Alcohol, ademas somos una empresa dedicada a la elaboración artesanal de paletas de alta calidad.
+                        Desde nuestros inicios, hemos buscado diferenciarnos en el mercado mediante la innovación en la elaboración de productos que satisfagan los gustos más exigentes de nuestros clientes.
+                      </center>
+                                        <br> 
+                                      <center>
+                                          <img src="paloma.gif" style="width: 344px; height: 226px; float: center; padding: 15px;">
+                                        </center>
+                                        </div>
+                <div style="clear: both;"> 
+                </div>   
+                    </td>
+                    </tr>
+                   </tbody>
+                   </table>
+                   <br>
+                  <h1 style="color: #ffffff;">Productos</h1>
+<br>
+                   <h1 style="text‐align: center;"><br></h1>
+                   <table class="table2"  style="background‐color: rgb(106, 161, 109); width: 70%; text‐align: left; margin‐left: auto; margin‐right: auto;"
+                   border="5" cellpadding="15" cellspacing="15">
+                     <tbody>   <tr>   <td style="background-color: #7e6767;">
+                                            <center>
+                                                                     <td> 
+                     En Paradyse Resert Zero ofrecemos las siguientes presentaciones:
+                          <br>
+                    <br>
+                    <td>
+                          <div align="justify-content"> 
+                          <img src="paletas 1.jpeg" width="200"
+                               height="341" >
+                              </div> >
+                              Paletas cremosas de fresa de forma punteada
+                            </td>
+
+                            <td> 
+                                   <div align="justify-content"> 
+                                   <img src="paleta 7.jpeg" width="200"
+                                        height="341" >
+                                       </div> >
+                                       Paletas cremosas de fresa de vaso
+                                     </td>
+
+                                     <td> 
+                                      <div align="justify-content"> 
+                                      <img src="paleta 9.jpeg" width="200"
+                                           height="341" >
+                                          </div> >
+                                          Paletas cremosas de fresa en cubo
+                                        </td>
+                                                                          </center>
+                                                              <div style="clear: both;"> 
+                   </div>   
+                       </td>
+                       </tr>
+                      </tbody>
+                      </table>
+	                               </body>
+    <header>
+           </header>
+      <main>
+</td>
+</tr>
+	</table>
+              </main>
+              <footer>
+              </footer>
+               </body>
+               
+<br>
+<br>
+<br>
+               <p class="">©Copyright 2023 de Paradyse Resert Zero. Todos los derechos revertidos.</p>
+
+</html>

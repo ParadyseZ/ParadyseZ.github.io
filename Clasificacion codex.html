@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html>
+   <head>
+	      <title>Elaboración </title>
+        <style type="text/css">
+* {
+    padding:0px;
+    margin: 0px;
+}
+body {
+  background-image: url("fondo 39.jpg");
+
+  border: rgb(92, 82, 82) 2px solid;
+  margin: 35px;
+}
+
+.title {
+	width: 100%;
+	background: hsl(0, 0%, 0%);
+  color: rgb(155, 179, 25);
+	height: 200px;
+  	display: flex;
+	align-items: center;
+	justify-content: center;
+
+}
+
+.title h1{
+	color: #ffffff;
+	font-size: 34px;
+	font-weight: 200;
+	text-align: center;
+}
+
+#header {
+    margin: auto;
+    width: 1300px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+.nav {
+	width: 1300px;
+	display: flex;
+	flex-wrap: wrap;
+	height: 40px;
+}
+.nav li{
+	flex-basis: 0;
+	flex-grow: 0;
+	border-right: 80px solid #1ef50b;
+	position: relative;
+}
+
+.nav .first-item{
+	border-left: 1px solid #e6ff03;
+}
+
+.nav li a{
+	display: flex;
+	flex-direction: column;
+	font-size: 20px;
+}
+
+.nav .imagen{
+	position: absolute;
+	bottom: 0;
+	right: 10px;
+	width: 0%;
+	z-index: 20;
+
+	-webkit-transition: all 300ms cubic-bezier(0.445, 0.050, 0.550, 0.950); 
+   -moz-transition: all 300ms cubic-bezier(0.445, 0.050, 0.550, 0.950); 
+     -o-transition: all 300ms cubic-bezier(0.445, 0.050, 0.550, 0.950); 
+        transition: all 300ms cubic-bezier(0.445, 0.050, 0.550, 0.950); /* easeInOutSine */
+
+-webkit-transition-timing-function: cubic-bezier(0.445, 0.050, 0.550, 0.950); 
+   -moz-transition-timing-function: cubic-bezier(0.445, 0.050, 0.550, 0.950); 
+     -o-transition-timing-function: cubic-bezier(0.445, 0.050, 0.550, 0.950); 
+        transition-timing-function: cubic-bezier(0.445, 0.050, 0.550, 0.950); /* easeInOutSine */
+
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.51);
+-moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.51);
+box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.51);
+}
+
+.nav li a .text-item{
+	width: 100%;
+	height: 150%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	color: #eeff00;
+	top: 0%;
+	position: absolute;
+	z-index: 10;
+
+	-webkit-transition: all 500ms cubic-bezier(0.175, 0.885, 0.320, 1); /* older webkit */
+-webkit-transition: all 500ms cubic-bezier(0.175, 0.885, 0.320, 1.275); 
+   -moz-transition: all 500ms cubic-bezier(0.175, 0.885, 0.320, 1.275); 
+     -o-transition: all 500ms cubic-bezier(0.175, 0.885, 0.320, 1.275); 
+        transition: all 500ms cubic-bezier(0.175, 0.885, 0.320, 1.275); /* easeOutBack */
+
+-webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1); /* older webkit */
+-webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275); 
+   -moz-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275); 
+     -o-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275); 
+        transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275); /* easeOutBack */
+}
+
+.nav li a .down-item{
+	position: absolute;
+	top: 0%;
+	width: 100%;
+	height: 150%;
+	background: #524b4b;
+
+	-webkit-transition: all 200ms cubic-bezier(0.215, 0.610, 0.355, 1.000); 
+   -moz-transition: all 200ms cubic-bezier(0.215, 0.610, 0.355, 1.000); 
+     -o-transition: all 200ms cubic-bezier(0.215, 0.610, 0.355, 1.000); 
+        transition: all 200ms cubic-bezier(0.215, 0.610, 0.355, 1.000); /* easeOutCubic */
+
+-webkit-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000); 
+   -moz-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000); 
+     -o-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000); 
+        transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000); /* easeOutCubic */
+}
+
+.nav li:hover .down-item, .menu li:hover .text-item{
+	top: 100%;
+	height: 115%;
+}
+
+.nav li:hover .imagen{
+	width: 100%;
+	right: 0px;
+}
+.nav li a {
+background-color: rgb(0, 0, 0);
+color: rgb(226, 226, 226);
+text-decoration: underline;
+padding: 10px 85px;
+display: block;
+}
+
+.nav > li a:hover {
+     background-color: #fa0000;
+    }
+
+.nav > li {
+float: left;
+}
+
+.nav li ul {
+  display: none;
+  position: absolute;
+  position: absolute;
+  max-width: 300px; 
+}
+
+.nav li:hover > ul {
+  display: block;
+}
+
+.contenedor{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50vh;
+    }
+    .contenedor figure{
+       position:relative;
+        height: 450px;
+        cursor: pointer;
+        width: 1250px;
+        overflow: hidden;
+        border-radius: 6px;
+        box-shadow: 0px 15px 25px rgba(0,0,0,0.50);
+    }
+    .contenedor figure img{
+        width: 100%;
+        height: 100%;
+        transition: all 400ms ease-out;
+        will-change: transform;
+    }
+    .contenedor figure .capa{
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(249, 253, 0, 0.671);
+        transition: all 400ms ease-out;
+        opacity: 0;
+        visibility: hidden;
+       text-align: center;
+    }
+    .contenedor figure:hover > .capa {
+        opacity: 1;
+        visibility: visible;
+    }
+    .contenedor figure:hover > .capa h3{
+        margin-top: 70px;
+        margin-bottom: 15px;
+    }
+    .contenedor figure:hover > img{
+      -webkit-transform: scale(1.8);
+    }
+    .contenedor figure .capa h3{
+        color: #ffffff;
+        font-weight: 400;
+        margin-bottom: 120px;
+        transition: all 400ms ease-out;
+         margin-top: 30px;
+    }
+    .contenedor figure .capa p{
+        color: #000000;
+        font-size: 50px;
+        line-height: 1.5;
+        width: 800%;
+        max-width: 520px;
+        margin: auto;
+    }
+
+    table {
+      text-align: center;
+      background-image: url("fondo 37.jpg");
+width: 780px;
+	height: 50%;
+  color: #000000;
+
+}
+
+.table2 {
+  font-size: 20px;
+      text-align: justify;
+      background-image: url("fondo 37.jpg");
+width: 780px;
+	height: 50%;
+  color: #000000;
+
+}
+
+.table3 {
+      font-size: 20px;
+      text-align: justify;
+background-color:#000000;
+color:#000000;
+}
+
+.table4 {
+  font-size: 20px;
+      text-align: justify;
+      background-image: url("fondo 37.jpg");
+width: 780px;
+	height: 50%;
+  color: #000000;
+
+}
+
+</style>
+</head>
+<body>
+ <section class="title">
+   <h1>Paradyse Resert Zero</h1>
+   </section>
+
+   <nav class="navegacion">
+     <ul class="menu">
+
+<div id="header">
+<ul class="nav">
+  <li>
+    <a href="Inicio.html">
+    <img src="fresa.jpg" alt="" class="imagen">
+    <span class="text-item">Inicio</span>
+    <span class="down-item"></span>
+    </a>
+   </li>
+   
+   <li>
+    <a href="Antecedentes.html">
+      <img src="paleta4.jpeg" alt="" class="imagen">
+      <span class="text-item">Producto especial</span>
+    <span class="down-item"></span>
+    </a>
+   </li>
+   
+   <li>
+    <a href="Clasificacion codex.html">
+    <img src="Logo empresa.jpg" alt="" class="imagen">
+    <span class="text-item">Elaboración</span>
+    <span class="down-item"></span>
+    </a>
+   </li>
+   
+   <li>
+    <a href="Produccion y consumo.html">
+      <img src="fondo 45.jpg" alt="" class="imagen">
+   <span class="text-item">Producción y Consumo</span>
+   <span class="down-item"></span>
+   </a>
+  </li>
+   
+   <li>
+    <a href="Innovacion.html">
+    <img src="fondo 42.jpg" alt="" class="imagen">
+    <span class="text-item">Innovación</span>
+    <span class="down-item"></span>
+    </a>
+   </li>
+
+</ul>
+</nav>
+
+<script src="antecedentes.js"></script>
+<br>
+<br>
+<br>
+<center>
+  <table>
+    <tr>
+    <td> 
+      <div align="right">
+      <img src="paleta 7.jpeg" width="200"
+           height="341" >
+          </div> >
+        </td>
+                         <td> 
+                  <div align="right">
+                  <img src="leche.jpg" width="300"
+                       height="241" >
+                      </div> >
+                    </td>
+  
+                    <td> 
+                      <div align="right">
+                      <img src="paleta4.jpeg" width="300"
+                           height="241" >
+                          </div> >
+                        </td>                                    
+         </tr>
+                           </table>
+                          </center>
+                          <br>
+<br>
+<br>
+<center>
+<h1>Ingredientes</h1>
+</center>
+<br>
+<br>
+<center>
+
+<table>
+  <tr>
+  <td> 
+    <div align="left">
+      <img src="paletas 2.jpeg" width="500"
+      height="341" >
+        </div> >
+      </td>
+                       <td> 
+
+                        <table class="table"; width: 60%; text‐align: left; margin‐left: auto; margin‐right: auto;"
+                        border="1" cellpadding="15" cellspacing="9">
+                          <tr>
+                            <td><strong>Materia prima</strong></td>
+                            <td><strong>Cantidad</strong></td>
+                           
+                          </tr>
+                          
+                          <tr>
+                            <td>Azúcar</td>
+                            <td>1/2 Taza</td>
+                            
+                          </tr>
+                          
+                          <tr>
+                            <td>Extracto de vainilla</td>
+                            <td>1 cucharadita</td>
+                            
+                          </tr>
+
+                          <tr>
+                            <td>Leche entera</td>
+                            <td>2 tazas</td>
+                          </tr>
+
+                          <tr>
+                            <td>Fresas cortadas en trozos pequeños</td>
+                            <td>1/2 taza</td>
+                          </tr>
+
+                          <tr>
+                            <td>Vodka o Ron</td>
+                            <td>1/4 taza</td>
+                          </tr>
+                                                   </table>
+                  </td>                                                   
+       </tr>
+                         </table>
+                        </center>
+                        <br>
+<br>
+                        <h1>¿Como se elaboran las paletas?</h1>
+                        <br>
+                        <center>
+                        <table class="table2">
+                          <tr>
+                          <td> 
+                            <div align="right">
+                            <img src="fondo 40.jpg" width="300"
+                                 height="241" >
+                                </div> >
+                              </td>
+                    
+                                 <td>                       
+                                   1. Colocar la leche, el azúcar y el extracto de vainilla en una licuadora o procesador de alimentos. Mezclar bien hasta que el azúcar se haya disuelto.
+                                   <br>
+                                   <br>
+                                   2. Agregar las fresas en trozos y mezclar otra vez hasta que estén bien incorporadas. Si se desea un sabor más intenso a fresa, se puede añadir más cantidad.
+                                   <br>
+                                   <br>
+                                   3. Agregar el vodka o ron y mezclar bien.
+                                   <br>
+                                   <br>
+                                   4. Verter la mezcla en los moldes para paletas y colocar los palitos en el centro de cada molde.
+                                   <br>
+                                   <br>
+                                   5. Congelar durante al menos 4 horas o hasta que estén completamente solidos.
+                                   <br>
+                                   <br>
+                                   6. Al momento de servir, sacar del congelador y dejar reposar por unos minutos hasta que se hablanden un poco y se puedan sacar facilmente del molde.
+                                   <br>
+                                   <br>
+                                   7. Disfrutar de la paleta de leche con el sabor dulce de la fresa y el toque perfumado del alcohol.
+                                    </td>
+                    
+                                      <td> 
+                                                         
+                               </tr>
+                                                 </table>
+                                                </center>
+                                                <br>
+                                                <br>
+                                                <center>
+                                                  <table class="table3" style="background‐color: rgb(106, 161, 109); width: 50%; text‐align: left; margin‐left: auto; margin‐right: auto;"
+                                                  border="9" cellpadding="15" cellspacing="9">
+                                                    <tbody>   <tr>   <td style="background-color: #ffffff;">
+                                                    <center>
+                                                      <h4>Flujograma</h4>
+                                                    </center>
+                                                      <br>
+                                                      <br>
+                                                        </center>
+                                                        <center>
+                                                                <img src="flujograma.jpg" style="width: 444px; height: 626px; float: center; padding: 15px;">
+                                                        </center>
+                                                        </div>
+                                                  <div style="clear: both;"> 
+                                                  </div>   
+                                                      </td>
+                                                      </tr>
+                                                     </tbody>
+                                                     </table>
+                                                  </center>
+                                                  <br>
+                                                  <br>
+                                                  <br>
+                                                <center>
+                                                  <h1>Videos</h1>
+                                                </center>
+                                                  <br>
+                                                  <br>
+                                                  <br>
+                                                <center>
+                                                  <table class="table2"  style="background‐color: rgb(106, 161, 109); width: 40%; text‐align: left; margin‐left: auto; margin‐right: auto;"
+                   border="9" cellpadding="15" cellspacing="9">
+                     <tbody>   <tr>   <td style="background-color: #7e6767;">
+                                            <center>
+                    <td>
+                      <div align="justify-content"> 
+                        <video  width="520"  height="340" controls>
+                      <source src="ronaldo.mp4" type="video/mp4">
+                        </video>
+                           </div>  
+                           </td>
+
+                            <td> 
+                                   <div align="justify-content"> 
+                                    <video  width="520"  height="340" controls>
+                                  <source src="claudia.mp4" type="video/mp4">
+                                    </video>
+                                       </div> 
+                                     </td>
+                                                                          </center>
+                                                              <div style="clear: both;"> 
+                   </div>   
+                       </td>
+                       </tr>
+                      </tbody>
+                      </table>
+                    </center>
+
+                    <center>
+                      <table class="table4"  style="background‐color: rgb(106, 161, 109); width: 40%; text‐align: left; margin‐left: auto; margin‐right: auto;"
+border="9" cellpadding="15" cellspacing="9">
+<tbody>   <tr>   <td style="background-color: #7e6767;">
+                <center>
+<td>
+<div align="justify-content"> 
+<video  width="520"  height="340" controls>
+<source src="Isaac.mp4" type="video/mp4">
+</video>
+</div>  
+</td>
+
+<td> 
+       <div align="justify-content"> 
+        <video  width="520"  height="340" controls>
+      <source src="fernando.mp4" type="video/mp4">
+        </video>
+           </div> 
+         </td>
+                                              </center>
+                                  <div style="clear: both;"> 
+</div>   
+</td>
+</tr>
+</tbody>
+</table>
+</center>
+
+
+</body>
+<br>
+<br>
+<br>
+      <header>
+                  </header>
+      <main>
+              </main>
+              <footer>
+                <p>©Copyright 2023 de Paradyse Resert Zero. Todos los derechos revertidos.</p>
+              </footer>
+   </body>
+</html>

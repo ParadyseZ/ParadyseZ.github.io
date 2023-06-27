@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html>
+   <head>
+	      <title>Producción y consumo </title>
+        <style type="text/css">
+* {
+    padding:0px;
+    margin: 0px;
+}
+body {
+  background-color: antiquewhite;
+  border: rgb(92, 82, 82) 2px solid;
+  margin: 25px;
+}
+
+.title {
+	width: 100%;
+	background: hsl(0, 0%, 0%);
+  color: rgb(155, 179, 25);
+	height: 200px;
+  	display: flex;
+	align-items: center;
+	justify-content: center;
+
+}
+
+.title h1{
+	color: #ffffff;
+	font-size: 34px;
+	font-weight: 200;
+	text-align: center;
+}
+
+#header {
+    margin: auto;
+    width: 1300px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+.nav {
+	width: 1300px;
+	display: flex;
+	flex-wrap: wrap;
+	height: 40px;
+}
+
+.nav li{
+	flex-basis: 0;
+	flex-grow: 0;
+	border-right: 80px solid #1ef50b;
+	position: relative;
+}
+
+.nav .first-item{
+	border-left: 1px solid #e6ff03;
+}
+
+.nav li a{
+	display: flex;
+	flex-direction: column;
+	font-size: 20px;
+}
+
+.nav .imagen{
+	position: absolute;
+	bottom: 0;
+	right: 10px;
+	width: 0%;
+	z-index: 20;
+
+	-webkit-transition: all 300ms cubic-bezier(0.445, 0.050, 0.550, 0.950); 
+   -moz-transition: all 300ms cubic-bezier(0.445, 0.050, 0.550, 0.950); 
+     -o-transition: all 300ms cubic-bezier(0.445, 0.050, 0.550, 0.950); 
+        transition: all 300ms cubic-bezier(0.445, 0.050, 0.550, 0.950); /* easeInOutSine */
+
+-webkit-transition-timing-function: cubic-bezier(0.445, 0.050, 0.550, 0.950); 
+   -moz-transition-timing-function: cubic-bezier(0.445, 0.050, 0.550, 0.950); 
+     -o-transition-timing-function: cubic-bezier(0.445, 0.050, 0.550, 0.950); 
+        transition-timing-function: cubic-bezier(0.445, 0.050, 0.550, 0.950); /* easeInOutSine */
+
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.51);
+-moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.51);
+box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.51);
+}
+
+.nav li a .text-item{
+	width: 100%;
+	height: 150%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	color: #eeff00;
+	top: 0%;
+	position: absolute;
+	z-index: 10;
+
+	-webkit-transition: all 500ms cubic-bezier(0.175, 0.885, 0.320, 1); /* older webkit */
+-webkit-transition: all 500ms cubic-bezier(0.175, 0.885, 0.320, 1.275); 
+   -moz-transition: all 500ms cubic-bezier(0.175, 0.885, 0.320, 1.275); 
+     -o-transition: all 500ms cubic-bezier(0.175, 0.885, 0.320, 1.275); 
+        transition: all 500ms cubic-bezier(0.175, 0.885, 0.320, 1.275); /* easeOutBack */
+
+-webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1); /* older webkit */
+-webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275); 
+   -moz-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275); 
+     -o-transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275); 
+        transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275); /* easeOutBack */
+}
+
+.nav li a .down-item{
+	position: absolute;
+	top: 0%;
+	width: 100%;
+	height: 150%;
+	background: #524b4b;
+
+	-webkit-transition: all 200ms cubic-bezier(0.215, 0.610, 0.355, 1.000); 
+   -moz-transition: all 200ms cubic-bezier(0.215, 0.610, 0.355, 1.000); 
+     -o-transition: all 200ms cubic-bezier(0.215, 0.610, 0.355, 1.000); 
+        transition: all 200ms cubic-bezier(0.215, 0.610, 0.355, 1.000); /* easeOutCubic */
+
+-webkit-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000); 
+   -moz-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000); 
+     -o-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000); 
+        transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000); /* easeOutCubic */
+}
+
+.nav li:hover .down-item, .menu li:hover .text-item{
+	top: 100%;
+	height: 115%;
+}
+
+.nav li:hover .imagen{
+	width: 100%;
+	right: 0px;
+}
+.nav li a {
+background-color: rgb(0, 0, 0);
+color: rgb(226, 226, 226);
+text-decoration: underline;
+padding: 10px 85px;
+display: block;
+}
+
+.nav > li a:hover {
+     background-color: #fa0000;
+    }
+
+.nav > li {
+float: left;
+}
+
+.nav li ul {
+  display: none;
+  position: absolute;
+  position: absolute;
+  max-width: 300px; 
+}
+
+.nav li:hover > ul {
+  display: block;
+}
+
+.contenedor{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50vh;
+    }
+    .contenedor figure{
+       position:relative;
+        height: 450px;
+        cursor: pointer;
+        width: 1250px;
+        overflow: hidden;
+        border-radius: 6px;
+        box-shadow: 0px 15px 25px rgba(0,0,0,0.50);
+    }
+    .contenedor figure img{
+        width: 100%;
+        height: 100%;
+        transition: all 400ms ease-out;
+        will-change: transform;
+    }
+    .contenedor figure .capa{
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(249, 253, 0, 0.671);
+        transition: all 400ms ease-out;
+        opacity: 0;
+        visibility: hidden;
+       text-align: center;
+    }
+    .contenedor figure:hover > .capa {
+        opacity: 1;
+        visibility: visible;
+    }
+    .contenedor figure:hover > .capa h3{
+        margin-top: 70px;
+        margin-bottom: 15px;
+    }
+    .contenedor figure:hover > img{
+      -webkit-transform: scale(1.8);
+    }
+    .contenedor figure .capa h3{
+        color: #ffffff;
+        font-weight: 400;
+        margin-bottom: 120px;
+        transition: all 400ms ease-out;
+         margin-top: 30px;
+    }
+    .contenedor figure .capa p{
+        color: #000000;
+        font-size: 50px;
+        line-height: 1.5;
+        width: 800%;
+        max-width: 520px;
+        margin: auto;
+    }
+
+    table {
+      font-size: 20px;
+      text-align: justify;
+background-color:#503d3d;
+color:#ffffff;
+}
+p.box1 {
+width:950px;
+margin:10px 50px;
+padding:20px;
+font-size:italic;
+background-color:rgb(41, 99, 41);
+color:#000;
+}
+
+.table2 {
+   justify-content: center;
+background-color:#503d3d;
+color:hsl(0, 0%, 100%);
+}
+p.box1 {
+width:150px;
+margin:10px 50px;
+padding:20px;
+font-size:italic;
+background-color:rgb(83, 99, 41);
+color:#000;
+}
+
+    </style>
+</head>
+<body>
+
+ <section class="title">
+   <h1>Paradyse Resert Zero</h1>
+   </section>
+
+   <nav class="navegacion">
+     <ul class="menu">
+      <!DOCTYPE html>
+      <html lang="es">
+      <head>
+          <meta charset="UTF-8">
+          <title>Efecto Hover a Una Imagen</title>
+          <link rel="stylesheet" href="estilos.css">
+      </head>
+      <style>
+        
+      </style>
+      <body>
+                    
+<div id="header">
+<ul class="nav">
+<li>
+ <a href="Inicio.html">
+ <img src="fresa.jpg" alt="" class="imagen">
+ <span class="text-item">Inicio</span>
+ <span class="down-item"></span>
+ </a>
+</li>
+
+<li>
+ <a href="Antecedentes.html">
+  <img src="paleta4.jpeg" alt="" class="imagen">
+  <span class="text-item">Producto especial</span>
+ <span class="down-item"></span>
+ </a>
+</li>
+
+<li>
+ <a href="Clasificacion codex.html">
+ <img src="Logo empresa.jpg" alt="" class="imagen">
+ <span class="text-item">Elaboración</span>
+ <span class="down-item"></span>
+ </a>
+</li>
+
+<li>
+  <a href="Produccion y consumo.html">
+    <img src="fondo 45.jpg" alt="" class="imagen">
+ <span class="text-item">Producción y Consumo</span>
+ <span class="down-item"></span>
+ </a>
+</li>
+
+<li>
+  <a href="Innovacion.html">
+  <img src="fondo 42.jpg" alt="" class="imagen">
+  <span class="text-item">Innovación</span>
+  <span class="down-item"></span>
+  </a>
+ </li>
+
+</ul>
+</nav>
+			<div class="secciones">
+			<article id="tab1">
+                <br>
+                <h2>Producción</h2>
+                <br>
+				<h2>América del Norte tiene la mayor cuota de mercado</h2>
+                <br>
+                <p> De acuerdo con el Departamento de Agricultura de EEUU (USDA): “encabeza la producción total de  helados y postres helados, con aproximadamente 6,056 billones de litros, siendo el estado de California
+                el mayor productor de ese país”.</p>
+                <br>
+            <p>La mayoría de estos consumidores optan por los postres congelados como sustitutos de las comidas. Además, los estilos de
+vida agitados, junto con las preocupaciones por la salud y el bienestar, están impulsando estos cambios.</p>
+               			</article>
+                           <center>
+                           <img src="mapa.jpg.png" alt="" class="imagen">
+                           <br>
+                           Mercado de helados: tamaño del mercado (%), por geografía, global.   
+                        </center>
+                        <br>
+                    </div>
+
+                    <div class="secciones">
+                        <article id="tab1">
+                            <br>
+                            <h2> Mercado de las paletas con alcohol.</h2>
+                            <br>
+                                                       <p>Hay mencionar que el helado de licor también está ganando popularidad en regiones desarrolladas
+                                como América del Norte y Europa. Los productos contienen menos del 0,5% de alcohol y, por lo tanto, se
+                                venden ampliamente al por menor en tiendas de comestibles y tiendas especializadas. Por ejemplo,
+                                HäagenDazs lanzó un helado con infusión de alcohol con un sabor de cinco pintas tradicionales
+        elaborado con crema irlandesa, ron, bourbon y cerveza negra. Por lo tanto, ofrecer productos premium
+        con sabores innovadores y una indulgencia cargada para los consumidores está impulsando el
+        crecimiento del mercado.</p>                                       </article>
+                                       <center>
+                                       <img src="paleta 6.jpg" width="300"
+                                       height="341"  alt="" class="imagen">
+                                       <br>
+                                    </center>
+                                    <br>
+                                </div>
+                        <div class="secciones">
+                            <article id="tab1">
+                                <br>
+                                <h2> Producción de paletas en el mundo</h2>
+                                <br>
+                                                           <p>Las paletas artesanales se han convertido en una alternativa saludable y delicioso para los postres tradicionales, y los consumidores están dispuestos a pagar un precio premium por estos productos.
+
+                                                            En la actualidad, países como México, Colombia, Perú y Brasil son conocidos por su producción de paletas artesanales, con México siendo el líder mundial en la producción de paletas. Las paletas mexicanas tradicionales, como las de limón, fresa, tamarindo y cajeta son muy populares en todo el mundo.</p>
+                                 </article>
+                                 <center>
+                                    <img src="fondo 21.jpg" width="300"
+                                    height="341"  alt="" class="imagen">
+                                    <br>
+                                 </center>
+                                 <br>
+                                    </div>
+
+                                    <div class="secciones">
+                                        <article id="tab1">
+                                            <br>
+                                            <h2>Consumo</h2>
+                                            <br>
+                                            <h2>Perspectiva del Mercado Latinoamericano del Helado</h2>
+                                            <br>
+                                            <p> Chile es el país líder en América Latina en consumo de helado, con un promedio de consumo de hasta 11
+                                                kilos anuales por habitante. Por eso, Tetra Pak es consciente de la oportunidad que genera este negocio
+                                                y cuenta con soluciones que abarcan la gama completa de deliciosos productos a base de helado, desde
+                                                palitos de agua hasta pasteles helados para fabricantes.</p>
+                                            <br>
+                                        <p>Este ranking está compuesto por 13 países: Chile, Costa Rica, Uruguay, Brasil, Bolivia, Colombia, Ecuador,
+                                            Venezuela, Guatemala, Perú, Argentina, México y República Dominicana.</p>
+                                                       </article>
+                                                       <center>
+                                                       <img src="grafica.jpg.png" alt="" class="imagen">
+                                                       <br>
+                                                    </center>
+                                                    <br>
+                                                    <footer>
+                                                        <p>©Copyright 2023 de Paradyse Resert Zero. Todos los derechos revertidos.</p>
+                                                      </footer>
+                                                </div>
+                                                
+</body>
+</html>
